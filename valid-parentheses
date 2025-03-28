@@ -1,0 +1,24 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (inputString) {
+    const stack = [];
+
+    for (let i = 0; i < inputString.length; i++) {
+        const currValue = inputString[i];
+        const lastStackValue = stack[stack.length - 1];
+
+        const isClosingCurlyBrackets = lastStackValue === '{' && currValue === '}';
+        const isClosingBrackets = lastStackValue === '[' && currValue === ']';
+        const isClosingParenthesis = lastStackValue === '(' && currValue === ')';
+        
+        if (isClosingCurlyBrackets || isClosingBrackets || isClosingParenthesis) {
+            stack.pop()
+            continue;
+        }
+        stack.push(currValue);
+    }
+
+    return stack.length === 0;
+}
