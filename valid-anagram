@@ -1,0 +1,15 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    s.toLowerCase();
+    t.toLowerCase();
+
+    const sortedS = [...s].sort().toString();
+    const sortedT = [...t].sort().toString();
+
+    return sortedS === sortedT
+
+};
