@@ -1,0 +1,14 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    const numCollection = new Map();
+    for (let num of nums) {
+        if (numCollection.has(num)) {
+            return true
+        }
+        numCollection.set(num, true)
+    }
+    return false;
+};
