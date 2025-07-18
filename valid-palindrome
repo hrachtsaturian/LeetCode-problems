@@ -1,0 +1,17 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+    const validString = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+
+    left = 0;
+    right = validString.length - 1
+
+    while (left < right) {
+        if (validString[left] != validString[right]) return false
+        left++;
+        right--;
+    }
+    return true;
+};
