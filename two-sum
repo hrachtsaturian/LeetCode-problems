@@ -4,6 +4,7 @@
  * @return {number[]}
  */
 
+// JavaScript
 var twoSum = function (nums, target) {
     for (let i=0; i < nums.length; i++) {
         let complement = target - nums[i]
@@ -15,3 +16,19 @@ var twoSum = function (nums, target) {
     return [];
 }
 
+// Python 
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            try:
+                indexOfRemainder = nums.index(complement, i+1)
+                return [i, indexOfRemainder]
+            except ValueError:
+                continue
+        return []
