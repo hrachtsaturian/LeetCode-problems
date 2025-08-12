@@ -2,6 +2,8 @@
  * @param {string} s
  * @return {boolean}
  */
+
+// JavaScript
 var isPalindrome = function (s) {
     const validString = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
 
@@ -15,3 +17,13 @@ var isPalindrome = function (s) {
     }
     return true;
 };
+
+// Python
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        only_letters = ''.join(char for char in s if char.isalnum()).lower()
+        return only_letters == only_letters[::-1]
